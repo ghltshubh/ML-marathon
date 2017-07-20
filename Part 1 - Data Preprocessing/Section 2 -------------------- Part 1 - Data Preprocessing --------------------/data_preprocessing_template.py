@@ -20,3 +20,5 @@ X[:, 1:3] = imputer.transform(X[:, 1:3])
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 labelencoder_X = LabelEncoder()
 labelencoder_X.fit_transform(X[:, 0])
+onehotencoder = OneHotEncoder(categorical_features=[0])
+X = onehotencoder.fit_transform(X).toarray()
